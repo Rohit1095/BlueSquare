@@ -33,6 +33,7 @@ public class ProductInfoPage {
 	private By productPriceData = By.cssSelector("div#content ul.list-unstyled:nth-of-type(2) li");
 	private By quantity = By.id("input-quantity");
 	private By addToCart = By.id("button-cart");
+	private By cartTotal=By.xpath("//span[@id='cart-total']");
 	private By successMsg = By.cssSelector("div.alert.alert-success.alert-dismissible");
 
 	// 3. Actions
