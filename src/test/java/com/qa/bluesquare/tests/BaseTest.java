@@ -5,10 +5,12 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.bluesquare.driverfactory.DriverFactory;
+import com.qa.bluesquare.listeners.ExtentReportListener;
 import com.qa.bluesquare.pages.AccountsPage;
 import com.qa.bluesquare.pages.LoginPage;
 import com.qa.bluesquare.pages.ProductInfoPage;
@@ -16,6 +18,7 @@ import com.qa.bluesquare.pages.RegistrationPage;
 import com.qa.bluesquare.pages.SearchResultPage;
 
 
+//@Listeners(ExtentReportListener.class)
 public class BaseTest {
 	
 	public DriverFactory df;
