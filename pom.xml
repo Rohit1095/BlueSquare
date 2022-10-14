@@ -16,6 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<aspectj.version>1.9.5</aspectj.version>
 
 	</properties>
 
@@ -64,6 +65,25 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 
 
