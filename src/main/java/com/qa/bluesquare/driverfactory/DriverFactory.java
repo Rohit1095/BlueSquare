@@ -17,6 +17,8 @@ public class DriverFactory {
 	public static String highlight;
 	public OptionsManager optionsManager;
 
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
+
 	public WebDriver init_driver(Properties prop) {
 		String browserName = prop.getProperty("browser");
 		System.out.println("launched browser is " + browserName);
@@ -25,23 +27,29 @@ public class DriverFactory {
 		optionsManager = new OptionsManager(prop);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(optionsManager.getChromOptions());
+			// driver = new ChromeDriver(optionsManager.getChromOptions());
+			tlDriver.set(new ChromeDriver(optionsManager.getChromOptions()));
 		}
 
 		else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver(optionsManager.getFirfoxOptions());
+			// driver = new FirefoxDriver(optionsManager.getFirfoxOptions());
+			tlDriver.set(new FirefoxDriver(optionsManager.getFirfoxOptions()));
 		}
 
 		else {
 			System.out.println("this application only run on chrome and firefox browser");
 		}
 
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.get(prop.getProperty("url"));
-		return driver;
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().maximize();
+		getDriver().get(prop.getProperty("url"));
+		return getDriver();
 
+	}
+
+	public static synchronized WebDriver getDriver() {
+		return tlDriver.get();
 	}
 
 	public Properties init_Prop() {
