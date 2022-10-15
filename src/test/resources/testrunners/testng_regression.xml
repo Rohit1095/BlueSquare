@@ -7,6 +7,9 @@
 	<listeners>
 		<listener
 			class-name="com.qa.bluesquare.listeners.ExtentReportListener" />
+			<listener 
+			class-name="com.qa.bluesquare.listeners.TestAllureListener"/>
+
 	</listeners>
 	<test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
