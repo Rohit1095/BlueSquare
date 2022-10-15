@@ -74,7 +74,7 @@ public class DriverFactory {
 			System.out.println("running on environment..." + env);
 
 			try {
-				switch ("env") {
+				switch (env) {
 				case "qa":
 					ip = new FileInputStream("./src\\test\\resources\\config\\qa.config.properties");
 					break;
