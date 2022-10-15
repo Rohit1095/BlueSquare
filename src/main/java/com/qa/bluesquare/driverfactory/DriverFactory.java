@@ -63,7 +63,7 @@ public class DriverFactory {
 		if (env == null) {
 			System.out.println("Running on production environment");
 			try {
-				ip = new FileInputStream("./src\\test.resources\\config\\prod.config.properties");
+				ip = new FileInputStream("./src\\test\\resources\\config\\prod.config.properties");
 			} catch (FileNotFoundException e) {
 
 				e.printStackTrace();
@@ -76,14 +76,14 @@ public class DriverFactory {
 			try {
 				switch ("env") {
 				case "qa":
-					ip = new FileInputStream("./src\\test.resources\\config\\qa.config.properties");
+					ip = new FileInputStream("./src\\test\\resources\\config\\qa.config.properties");
 					break;
 
 				case "stage":
-					ip = new FileInputStream("./src\\test.resources\\config\\stage.config.properties");
+					ip = new FileInputStream("./src\\test\\resources\\config\\stage.config.properties");
 					break;
 				case "dev":
-					ip = new FileInputStream("./src\\test.resources\\config\\dev.config.properties");
+					ip = new FileInputStream("./src\\test\\resources\\config\\dev.config.properties");
 					break;
 
 				default:

@@ -24,7 +24,7 @@ public class AccountsPageTest extends BaseTest {
 
 	@Test
 	public void accPageFooterNoteTest() {
-		Assert.assertTrue(accPage.getAccFooterNote().contains("naveenopencart © 20221"));
+		Assert.assertTrue(accPage.getAccFooterNote().contains("naveenopencart © 2022"));
 	}
 
 	@Test
